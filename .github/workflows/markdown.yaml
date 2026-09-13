@@ -7,7 +7,10 @@ jobs:
 
   mdl:
     runs-on: ubuntu-latest
-    container: rsrchboy/mdl
     steps:
       - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+      - run: gem install mdl
       - run: mdl .
